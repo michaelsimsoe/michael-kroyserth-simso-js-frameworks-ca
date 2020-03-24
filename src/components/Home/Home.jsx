@@ -1,14 +1,19 @@
 import React, { useState, useEffect }from 'react';
 
 export const Home = () => {
-  // [games, setGames ] = useState([]);
+  const [games, setGames ] = useState([]);
 
   useEffect(() => {
     fetch('https://api.rawg.io/api/games')
       .then(res => res.json())
-      .then(data => console.log(data.results));
+      .then(data => setGames(data.results));
   })
   return (
-    <p>Home</p>
+    <>
+    {games.map((game) => (
+      <div>{game.name}</div>
+    ))}
+
+    </>
   )
 }
