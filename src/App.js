@@ -11,10 +11,12 @@ import { Home } from './components/home/Home';
 import { Favourites } from './components/favourites/Favourites';
 import { Contact } from './components/contact/Contact';
 import { GameDetails } from './components/gamedetails/GameDetails';
+import { Header } from './components/shared/Header';
 
 function App() {
   return (
     <Router>
+      <Header />
       <div>
         <nav>
           <ul>

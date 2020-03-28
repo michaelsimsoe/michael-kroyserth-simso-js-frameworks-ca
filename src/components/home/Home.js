@@ -1,5 +1,7 @@
 import React, { useState, useEffect }from 'react';
 
+import { GameCard } from './GameCard'
+
 export const Home = () => {
   const [games, setGames ] = useState([]);
 
@@ -11,7 +13,7 @@ export const Home = () => {
   return (
     <>
     {games.map((game) => (
-      <div>{game.name}</div>
+      <GameCard key={game.id} game={game}></GameCard>
     ))}
 
     </>
