@@ -25,10 +25,10 @@ const gameReducer = (state = {}, action) => {
 const favouriteGames = (state = [], action) => {
   switch(action.type) {
     case ADD_TO_FAVOURITE:
-      return {
+      return [
         ...state,
-        favouriteGames: action.payload
-      };
+        action.payload
+      ];
     default:
       return state
   }

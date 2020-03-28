@@ -4,8 +4,9 @@ import { useLocation } from 'react-router-dom';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
+import Button from "react-bootstrap/Button";
 
-import { fetchOneGame } from '../../actions';
+import { fetchOneGame, addToFavourites } from '../../actions';
 
 export const GameDetails = (props) => {
   const { game } = useSelector(state => state)
@@ -24,6 +25,7 @@ export const GameDetails = (props) => {
           <h1>{game.name}</h1>
           <a href={game.website}>Game website</a>
           <p>{game.description && game.description.replace(/(<([^>]+)>)/ig, "")}</p>
+          <Button onClick={() => dispatch(addToFavourites(game))}>Add to Favourites</Button>
         </Col>      
       </Row>
   )

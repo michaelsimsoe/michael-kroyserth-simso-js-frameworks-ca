@@ -1,16 +1,16 @@
 import React from 'react'
-
+import { useDispatch} from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-// import {
-//   Link
-// } from "react-router-dom";
+import { addToFavourites } from '../../actions';
+
 const cardStyle = {
   width: '18rem',
   margin: 10
 }
 export const GameCard = (props) => {
+  const dispatch = useDispatch()
   return (
     <div>
       <Card style={cardStyle}>
@@ -26,6 +26,7 @@ export const GameCard = (props) => {
           <LinkContainer to={`/game_details/${props.game.id}`}>
             <Button variant="primary">See game</Button>
           </LinkContainer>
+          <Button onClick={() => dispatch(addToFavourites(props.game))}>Add to Favourites</Button>
         </Card.Body>
       </Card>
     </div>
