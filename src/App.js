@@ -2,11 +2,11 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
-import './App.css';
+import Container from "react-bootstrap/Container";
+
 import { Home } from './components/home/Home';
 import { Favourites } from './components/favourites/Favourites';
 import { Contact } from './components/contact/Contact';
@@ -17,21 +17,7 @@ function App() {
   return (
     <Router>
       <Header />
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/Contact">Contact</Link>
-            </li>
-            <li>
-              <Link to="/Favourites">Favourites</Link>
-            </li>
-          </ul>
-        </nav>
-
+      <Container fluid>
         <Switch>
           <Route path="/" exact>
             <Home />
@@ -46,7 +32,7 @@ function App() {
             <Contact />
           </Route>
         </Switch>
-      </div>
+      </Container>
     </Router>
   )
 }
