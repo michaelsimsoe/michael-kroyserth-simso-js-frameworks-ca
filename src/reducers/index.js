@@ -1,9 +1,5 @@
 import { combineReducers } from 'redux';
-import { ADD_TO_FAVOURITE, FETCH_ALL_GAMES } from '../actions/types';
-
-const INTIAL_STATE = {
-  favouriteGames: [],
-}
+import { ADD_TO_FAVOURITE, FETCH_ALL_GAMES, FETCH_ONE_GAME } from '../actions/types';
 
 const gamesReducer = (state = [], action) => {
   switch(action.type) {
@@ -12,6 +8,15 @@ const gamesReducer = (state = [], action) => {
         ...state, 
         ...action.payload 
       ];
+    default:
+      return state;
+  }
+};
+
+const gameReducer = (state = {}, action) => {
+  switch(action.type) {
+    case FETCH_ONE_GAME:
+      return action.payload;
     default:
       return state;
   }
@@ -30,6 +35,7 @@ const favouriteGames = (state = [], action) => {
 }
 
 export default combineReducers({
+  game: gameReducer,
   games: gamesReducer,
   favourites: favouriteGames
 });
