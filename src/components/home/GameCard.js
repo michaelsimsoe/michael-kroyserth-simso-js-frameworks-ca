@@ -6,11 +6,14 @@ import Button from "react-bootstrap/Button";
 // import {
 //   Link
 // } from "react-router-dom";
-
+const cardStyle = {
+  width: '18rem',
+  margin: 10
+}
 export const GameCard = (props) => {
   return (
     <div>
-      <Card style={{ width: '18rem' }}>
+      <Card style={cardStyle}>
         <Card.Img variant="top" src={props.game.background_image} />
         <Card.Body>
           <Card.Title>{props.game.name}</Card.Title>

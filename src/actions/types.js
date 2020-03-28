@@ -1,0 +1,2 @@
+export const ADD_TO_FAVOURITE = 'ADD_TO_FAVOURITE';
+export const FETCH_ALL_GAMES = 'FETCH_ALL_GAMES';
