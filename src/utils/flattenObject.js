@@ -1,3 +1,4 @@
+// https://gist.github.com/penguinboy/762197
 export default function flattenObject(ob) {
 	const toReturn = {};
 	
