@@ -33,10 +33,10 @@ export const GameDetails = (props) => {
   }
   return (
       <Row>
-        <Col>
+        <Col sm={6}>
           <Image src={game.background_image} fluid />
         </Col>
-        <Col>
+        <Col sm={6}>
           <Row>
             <Col>
               <h1>{game.name}</h1>
@@ -53,7 +53,7 @@ export const GameDetails = (props) => {
               <h4>Available on:</h4>
               {game.platforms && <GameDetailList listItem={game.platforms}/>}
             </Col>
-            <Col xs={6}>
+            <Col xs={12} sm={6}>
               <p>{game.description && game.description.replace(/(<([^>]+)>)/ig, "")}</p>
               <Button onClick={handleClick}>
                 { gameIsFavourited < 0 ? 'Add to Favourites' : 'Favourited' }
