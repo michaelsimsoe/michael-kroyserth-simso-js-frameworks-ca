@@ -4,10 +4,9 @@ import Nav from "react-bootstrap/Nav";
 import { IndexLinkContainer } from "react-router-bootstrap";
 import { Link } from "react-router-dom";
 
-export const Header = (props) => {
+export const Header = () => {
   return (
-    <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="secondary" expand="lg" fixed="top">
         <Navbar.Brand><Link to="/">TopGames</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -24,6 +23,5 @@ export const Header = (props) => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-    </div>
   )
 }

@@ -13,11 +13,19 @@ import { Contact } from './components/contact/Contact';
 import { GameDetails } from './components/gamedetails/GameDetails';
 import { Header } from './components/shared/Header';
 
+const containerStyles = {
+  marginTop: 60
+}
+const footerStyles = {
+  width: '100%',
+  textAlign: 'center',
+  padding: '5em'
+}
 function App() {
   return (
     <Router>
       <Header />
-      <Container fluid>
+      <Container fluid style={containerStyles}>
         <Switch>
           <Route path="/" exact>
             <Home />
@@ -25,7 +33,7 @@ function App() {
           <Route path="/favourites">
             <Favourites />
           </Route>
-          <Route path="/game_details">
+          <Route path="/game">
             <GameDetails />
           </Route>
           <Route path="/contact">
@@ -33,6 +41,7 @@ function App() {
           </Route>
         </Switch>
       </Container>
+      <footer style={footerStyles}><em>This site is using data from <a href="https://api.rawg.io/docs/">RAWG Video Games Database API</a></em></footer>
     </Router>
   )
 }
